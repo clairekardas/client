@@ -23,3 +23,6 @@ This application is definitely safe and does not contain any malicious code. How
 On Windows, select `More Info` and `Run anyway`.
 
 On macOS, right-click or Control-click the application and select `Open`.
+
+Apple Silicon Macs use the Intel (`x64`) build through Rosetta 2 because the
+bundled Pepper Flash plug-in is Intel-only.
