@@ -71,8 +71,22 @@ jobs:
       - name: Install dependencies
         run: npm ci --force
 
+      - name: Install Arch package tools
+        if: matrix.target == 'linux-x64'
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y libarchive-tools
+
       - name: Build (electron forge)
         run: npm run ${{ matrix.build_script }}
+
+      - name: Build AppImage
+        if: matrix.target == 'linux-x64'
+        run: npm run make:linux-appimage
+
+      - name: Build Arch package
+        if: matrix.target == 'linux-x64'
+        run: npm run make:linux-arch
 
       - name: List generated targets
         shell: bash
@@ -84,7 +98,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: "${{ matrix.target }}-artifacts-${{ needs.tag.outputs.version }}"
-          path: out/make/**/*
+          path: |
+            out/make/**/*
+            dist/*.AppImage
+            dist/*.pkg.tar.*
           if-no-files-found: error
 
   release:
@@ -119,6 +136,7 @@ jobs:
               -o -iname '*.appx' \
               -o -iname '*.dmg' \
               -o -iname '*.pkg' \
+              -o -iname '*.pkg.tar.*' \
               -o -iname '*.zip' \
               -o -iname '*.nupkg' \) \
               -print0
