@@ -40,6 +40,9 @@ jobs:
           - os: ubuntu-latest
             target: linux-x64
             build_script: make:linux-x64
+          - os: ubuntu-latest
+            target: linux-arm64
+            build_script: make:linux-arm64
           - os: windows-latest
             target: windows-x64
             build_script: make:win32-x64
