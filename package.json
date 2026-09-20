@@ -1,6 +1,6 @@
 {
   "name": "moshi-online-client",
-  "version": "3.0.13",
+  "version": "3.0.14",
   "description": "Desktop client for moshionline.net",
   "main": "lib/main.js",
   "engines": {
