@@ -24,40 +24,6 @@
     "publish-git": "electron-forge publish",
     "lint": "echo \"No linting configured\""
   },
-  "config": {
-    "forge": {
-      "packagerConfig": {
-        "icon": "./icon",
-        "arch": "x64"
-      },
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "moshionline",
-            "authors": "Moshi Online Team",
-            "setupIcon": "./icon.ico"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-dmg",
-          "config": {
-            "format": "ULFO"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ]
-    }
-  },
   "bugs": {
     "url": "https://github.com/moshionlineteam"
   },
