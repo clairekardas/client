@@ -4,7 +4,7 @@
   "description": "Desktop client for moshionline.net",
   "main": "lib/main.js",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=22.0.0"
   },
   "scripts": {
     "start": "electron-forge start",
@@ -67,7 +67,6 @@
   "license": "CC0-1.0",
   "dependencies": {
     "discord-rpc": "^4.0.1",
-    "electron-forge": "^5.2.4",
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
@@ -80,7 +79,7 @@
     "@electron-forge/maker-squirrel": "^6.4.2",
     "@electron-forge/maker-zip": "^6.4.2",
     "@electron-forge/publisher-github": "^6.0.0-beta.54",
-    "electron": "^11.5.0",
+    "electron": "^34.3.2",
     "electron-builder": "24.13.3"
   },
   "build": {
@@ -127,7 +126,7 @@
   "allowScripts": {
     "aws-sdk@2.1692.0": true,
     "core-js@2.6.12": true,
-    "electron@11.5.0": true,
+    "electron@34.3.2": true,
     "electron-forge@5.2.4": true,
     "electron-winstaller@5.4.0": true,
     "github:devsnek/node-register-scheme#e7cc9a63a1f512565da44cb57316d9fb10750e17": true,
