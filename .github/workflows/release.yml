@@ -112,6 +112,9 @@ jobs:
     name: Create Draft Release
     needs: [tag, build]
     runs-on: ubuntu-latest
+    concurrency:
+      group: release-${{ needs.tag.outputs.version }}
+      cancel-in-progress: false
 
     steps:
       - name: Download and extract build artifacts
